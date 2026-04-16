@@ -11,5 +11,9 @@ Route::get('/contoh1', function () {
     return view('lp3i');
 });
 
+Route::get('/master', function () {
+    return view('layout.master');
+});
+
 Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('user.index');
 Route::get('/mahasiswa/tambah', [MahasiswaController::class, 'create'])->name('user.index');
