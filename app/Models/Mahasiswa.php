@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Mahasiswa extends Model
 {
-    //
     use HasFactory;
 
 
@@ -14,13 +14,12 @@ class Mahasiswa extends Model
         'nim',
         'nama',
         'jurusan',
-        'tempat lahir',
-        'tanggal lahir',
+        'tempat_lahir',
+        'tanggal_lahir',
         'nohp',
         'domisili',
         'email',
-        'jenis kelamin',
-        'tahun masuk',
+        'jenis_kelamin',
+        'tahun_masuk',
     ];
-
 }

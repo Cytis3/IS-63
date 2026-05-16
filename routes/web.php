@@ -1,19 +1,33 @@
 <?php
 
-use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\JurusanController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::get('/contoh1', function () {
     return view('lp3i');
 });
 
-Route::get('/master', function () {
-    return view('layout.master');
-});
+// Route::get('/master', function () {
+//     return view('layout.master');
+// });
 
-Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('user.index');dadadda
-Route::get('/mahasiswa/tambah', [MahasiswaController::class, 'create'])->name('user.index');
+//Modul Mahasiswa
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+Route::get('/mahasiswa/tambah', [MahasiswaController::class, 'create']);
+Route::post('/mahasiswa', [MahasiswaController::class, 'store']);
+Route::get('/mahasiswa/edit/{id}', [MahasiswaController::class, 'edit']);
+Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update']);
+Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy']);
+
+// Modul Jurusan
+Route::get('/jurusan', [JurusanController::class, 'index']);
+Route::get('/jurusan/tambah', [JurusanController::class, 'create']);
+Route::post('/jurusan', [JurusanController::class, 'store']);
+Route::get('/jurusan/edit/{id}', [JurusanController::class, 'edit']);
+Route::put('/jurusan/{id}', [JurusanController::class, 'update']);
+Route::delete('/jurusan/{id}', [JurusanController::class, 'destroy']);
